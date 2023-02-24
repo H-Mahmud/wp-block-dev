@@ -57,6 +57,6 @@ registerBlockType(block.name, {
     );
   },
   save: () => {
-    return <p>Hello World</p>;
+    return <p>Hello World!</p>;
   },
 });
