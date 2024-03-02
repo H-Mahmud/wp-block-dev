@@ -8,5 +8,6 @@
   "description": "A fancy header block with cool animation",
   "version": "1.0.0",
   "keywords": ["fancy", "header", "animated header"],
-  "textdomain": "wp-block-dev"
+  "textdomain": "wp-block-dev",
+  "editorScript": "file:./index.js"
 }
