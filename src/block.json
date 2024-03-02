@@ -13,7 +13,9 @@
   "style": "file:./index.css",
   "attributes": {
     "content": {
-      "type": "string"
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
     },
     "underline_color": {
       "type": "string",
