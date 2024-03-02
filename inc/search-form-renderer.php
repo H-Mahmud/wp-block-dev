@@ -2,18 +2,20 @@
 defined('ABSPATH') || exit;
 
 function wbd_search_form_renderer($atts) {
-    $styles = "background-color:{$atts['bgColor']};color:{$atts['textColor']};";
+    $bgColor = esc_attr($atts['bgColor']);
+    $color = esc_attr($atts['textColor']);
+    $styles = "background-color:{$bgColor};color:{$color};";
     ob_start(); ?>
     <div class="wp-block-udemy-plus-search-form" style="<?php echo $styles; ?>">
           <h1>Search: Your search term here</h1>
-          <form>
-            <input type='text' placeholder='Search' />
+          <form method="get" action="<?php echo esc_url(home_url('/')); ?>">
+            <input type='text' placeholder='<?php _e('Search', 'wp-block-dev'); ?>' name="s" value="<?php the_search_query(); ?>" />
             <div class='btn-wrapper'>
               <button
                 type='submit'
                 style="<?php echo $styles; ?>"
               >
-                Search
+                <?php _e('Search', 'wp-block-dev'); ?>
               </button>
             </div>
           </form>
