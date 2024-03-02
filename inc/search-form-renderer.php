@@ -11,10 +11,7 @@ function wbd_search_form_renderer($atts) {
           <form method="get" action="<?php echo esc_url(home_url('/')); ?>">
             <input type='text' placeholder='<?php _e('Search', 'wp-block-dev'); ?>' name="s" value="<?php the_search_query(); ?>" />
             <div class='btn-wrapper'>
-              <button
-                type='submit'
-                style="<?php echo $styles; ?>"
-              >
+              <button type='submit' style="<?php echo $styles; ?>" >
                 <?php _e('Search', 'wp-block-dev'); ?>
               </button>
             </div>
