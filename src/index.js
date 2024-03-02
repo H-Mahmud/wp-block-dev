@@ -15,6 +15,7 @@ registerBlockType(block.name, {
         onChange={(newVal) => setAttributes({ content: newVal })}
         placeholder={__("Enter your heading", "wp-block-dev")}
         value={content}
+        allowedFormats={["core/italic", "core/bold"]}
       />
     );
   },
