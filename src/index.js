@@ -8,10 +8,15 @@ registerBlockType(block.name, {
     const { content } = attributes;
     return (
       <RichText
+        tagName='H2'
         onChange={(newVal) => setAttributes({ content: newVal })}
         placeholder={__("Enter your heading", "wp-block-dev")}
         value={content}
       />
     );
+  },
+  save: ({ attributes }) => {
+    const { content } = attributes;
+    return <RichText.Content tagName='H2' value={content} />;
   },
 });
