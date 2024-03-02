@@ -3,4 +3,13 @@
  * Plugin Name: WP Block Dev
  */
 
- !defined('ABSPATH') || exit;
+ defined('ABSPATH') || exit;
+
+ // setup
+ !defined('WBD_DIR_PATH') && define('WBD_DIR_PATH', plugin_dir_path(__FILE__));
+
+ // includes
+ require WBD_DIR_PATH . 'inc/register-blocks.php';
+
+ // hooks
+ add_action('init', 'wbd_register_blocks');
