@@ -1,5 +1,10 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import {
+  RichText,
+  useBlockProps,
+  InspectorControls,
+} from "@wordpress/block-editor";
+import { PanelBody } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import block from "./block.json";
 import "./main.css";
@@ -9,14 +14,22 @@ registerBlockType(block.name, {
     const { content } = attributes;
     const blockProps = useBlockProps({ className: "fancy-header" });
     return (
-      <RichText
-        {...blockProps}
-        tagName='H2'
-        onChange={(newVal) => setAttributes({ content: newVal })}
-        placeholder={__("Enter your heading", "wp-block-dev")}
-        value={content}
-        allowedFormats={["core/italic", "core/bold"]}
-      />
+      <>
+        <InspectorControls>
+          <PanelBody title={__("Colors", "wp-block-dev")}>
+            colors panel body
+          </PanelBody>
+        </InspectorControls>
+
+        <RichText
+          {...blockProps}
+          tagName='H2'
+          onChange={(newVal) => setAttributes({ content: newVal })}
+          placeholder={__("Enter your heading", "wp-block-dev")}
+          value={content}
+          allowedFormats={["core/italic", "core/bold"]}
+        />
+      </>
     );
   },
   save: ({ attributes }) => {
