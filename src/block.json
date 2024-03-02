@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Fancy Header",
+  "name": "wp-block-dev/fancy-header",
+  "category": "wp-block-dev",
+  "icon": "star",
+  "description": "A fancy header block with cool animation",
+  "version": "1.0.0",
+  "keywords": ["fancy", "header", "animated header"],
+  "textdomain": "wp-block-dev"
+}
