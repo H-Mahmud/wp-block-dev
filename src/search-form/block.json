@@ -11,5 +11,14 @@
   "textdomain": "wp-block-dev",
   "editorScript": "file:./index.js",
   "style": "file:./index.css",
-  "attributes": {}
+  "attributes": {
+    "bgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#F87171"
+    }
+  }
 }
