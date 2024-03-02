@@ -9,5 +9,10 @@
   "version": "1.0.0",
   "keywords": ["fancy", "header", "animated header"],
   "textdomain": "wp-block-dev",
-  "editorScript": "file:./index.js"
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
 }
