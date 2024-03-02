@@ -12,8 +12,14 @@ import "./main.css";
 registerBlockType(block.name, {
   icon,
   edit: ({ attributes, setAttributes }) => {
-    const blockProps = useBlockProps();
     const { bgColor, textColor } = attributes;
+    const blockProps = useBlockProps({
+      className: "wp-block-udemy-plus-search-form",
+      style: {
+        backgroundColor: bgColor,
+        color: textColor,
+      },
+    });
     return (
       <>
         <InspectorControls>
@@ -33,12 +39,17 @@ registerBlockType(block.name, {
             ]}
           />
         </InspectorControls>
-        <div class='wp-block-udemy-plus-search-form' {...blockProps}>
+        <div {...blockProps}>
           <h1>Search: Your search term here</h1>
           <form>
             <input type='text' placeholder='Search' />
             <div class='btn-wrapper'>
-              <button type='submit'>Search</button>
+              <button
+                type='submit'
+                style={{ background: bgColor, color: textColor }}
+              >
+                Search
+              </button>
             </div>
           </form>
         </div>
