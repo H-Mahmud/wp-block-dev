@@ -6,7 +6,11 @@ function wbd_register_blocks() {
     $blocks = [
         ["name" => "fancy-header"],
         ["name" => "search-form", 
-            "options" => ['render_callback' => 'wbd_search_form_renderer']]
+            "options" => ['render_callback' => 'wbd_search_form_renderer']
+        ],
+        ["name" => "page-header",
+            "options" => ['render_callback' => 'wbd_page_header_renderer']
+        ]
     ];
 
     foreach($blocks as $block) {

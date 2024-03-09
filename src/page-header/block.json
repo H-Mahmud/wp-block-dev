@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Page Header",
+  "name": "wp-block-dev/page-header",
+  "category": "text",
+  "icon": "star-filled",
+  "description": "dynamic page header",
+  "version": "1.0.0",
+  "keywords": ["page", "header", "dynamic header"],
+  "textdomain": "wp-block-dev",
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css",
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
+}
