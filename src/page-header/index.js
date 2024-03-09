@@ -21,17 +21,22 @@ registerBlockType(block.name, {
               label={__("Show category", "wp-block-dev")}
               checked={showCategory}
               onChange={(newVal) => setAttributes({ showCategory: newVal })}
+              help={showCategory ? "Category shown" : "Custom content shown"}
             />
           </PanelBody>
         </InspectorControls>
         <div {...blockProps}>
           <div className='inner-page-header'>
-            <RichText
-              tag='H1'
-              value={content}
-              placeholder={__("Enter your heading", "wp-block-dev")}
-              onChange={(newVal) => setAttributes({ content: newVal })}
-            />
+            {showCategory ? (
+              <h1>Category: Some category</h1>
+            ) : (
+              <RichText
+                tag='H1'
+                value={content}
+                placeholder={__("Enter your heading", "wp-block-dev")}
+                onChange={(newVal) => setAttributes({ content: newVal })}
+              />
+            )}
           </div>
         </div>
       </>
