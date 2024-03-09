@@ -11,7 +11,9 @@ import "./main.css";
 
 registerBlockType(block.name, {
   edit: ({ attributes, setAttributes }) => {
-    const blockProps = useBlockProps();
+    const blockProps = useBlockProps({
+      className: "wp-block-udemy-plus-page-header",
+    });
     const { content, showCategory } = attributes;
     return (
       <>
@@ -31,7 +33,7 @@ registerBlockType(block.name, {
               <h1>Category: Some category</h1>
             ) : (
               <RichText
-                tag='H1'
+                tagName='H1'
                 value={content}
                 placeholder={__("Enter your heading", "wp-block-dev")}
                 onChange={(newVal) => setAttributes({ content: newVal })}
@@ -43,4 +45,3 @@ registerBlockType(block.name, {
     );
   },
 });
-``;

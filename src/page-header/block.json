@@ -13,9 +13,7 @@
   "style": "file:./index.css",
   "attributes": {
     "content": {
-      "type": "string",
-      "source": "html",
-      "selector": "H1"
+      "type": "string"
     },
     "showCategory": {
       "type": "boolean",
