@@ -1,5 +1,10 @@
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import {
+  InspectorControls,
+  RichText,
+  useBlockProps,
+} from "@wordpress/block-editor";
 import { registerBlockType } from "@wordpress/blocks";
+import { PanelBody, ToggleControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import block from "./block.json";
 import "./main.css";
@@ -7,9 +12,18 @@ import "./main.css";
 registerBlockType(block.name, {
   edit: ({ attributes, setAttributes }) => {
     const blockProps = useBlockProps();
-    const { content } = attributes;
+    const { content, showCategory } = attributes;
     return (
       <>
+        <InspectorControls>
+          <PanelBody title={__("General", "wp-block-dev")}>
+            <ToggleControl
+              label={__("Show category", "wp-block-dev")}
+              checked={showCategory}
+              onChange={(newVal) => setAttributes({ showCategory: newVal })}
+            />
+          </PanelBody>
+        </InspectorControls>
         <div {...blockProps}>
           <div className='inner-page-header'>
             <RichText
